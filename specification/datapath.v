@@ -5,7 +5,7 @@
 // template when writing your Verilog code.
 //
 // Names:  Steve Novakovic, Marc Lejay
-// Number:  13305081
+// Number:  13305081, XXXXXXXX
 //
 
 module datapath(remainder, 
