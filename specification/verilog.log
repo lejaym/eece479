@@ -1,0 +1,90 @@
+Host command: /CMC/tools/cadence/IUS08.20.024_lnx86/tools/verilog/bin/verilog.exe
+Command arguments:
+    controller.v
+    datapath.v
+    divider.v
+    test_divider.v
+
+Tool:	VERILOG-XL	08.20.001-p log file created Mar 14, 2015  01:00:57
+Tool:	VERILOG-XL	08.20.001-p   Mar 14, 2015  01:00:57
+
+Copyright (c) 1995-2004 Cadence Design Systems, Inc.  All Rights Reserved.
+Unpublished -- rights reserved under the copyright laws of the United States.
+
+Copyright (c) 1995-2004 UNIX Systems Laboratories, Inc.  Reproduced with Permission.
+
+THIS SOFTWARE AND ON-LINE DOCUMENTATION CONTAIN CONFIDENTIAL INFORMATION
+AND TRADE SECRETS OF CADENCE DESIGN SYSTEMS, INC.  USE, DISCLOSURE, OR
+REPRODUCTION IS PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF
+CADENCE DESIGN SYSTEMS, INC.
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c)(1)(ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c)(1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+                Cadence Design Systems, Inc.
+                555 River Oaks Parkway
+                San Jose, California  95134
+
+For technical assistance please contact the Cadence Response Center at
+1-877-CDS-4911 or send email to support@cadence.com
+
+For more information on Cadence's Verilog-XL product line send email to
+talkv@cadence.com
+
+Compiling source file "controller.v"
+Compiling source file "datapath.v"
+Compiling source file "divider.v"
+Compiling source file "test_divider.v"
+Highest level modules:
+test_divider
+
+Fail:  36/  1 is not   0 rem   0
+Fail:   9/ 99 is not   0 rem   0
+Fail:  13/ 13 is not   0 rem   0
+Fail: 101/ 18 is not   0 rem   0
+Fail:   1/ 13 is not   0 rem   0
+Fail: 118/ 61 is not   0 rem   0
+Fail: 237/ 12 is not   0 rem   0
+Fail: 249/ 70 is not   0 rem   0
+Fail: 197/ 42 is not   0 rem   0
+Fail: 229/119 is not   0 rem   0
+Fail:  18/ 15 is not   0 rem   0
+Fail: 242/ 78 is not   0 rem   0
+Fail: 232/ 69 is not   0 rem   0
+Fail:  92/ 61 is not   0 rem   0
+Fail:  45/101 is not   0 rem   0
+Fail:  99/ 10 is not   0 rem   0
+Fail: 128/ 32 is not   0 rem   0
+Fail: 170/ 29 is not   0 rem   0
+Fail: 150/ 19 is not   0 rem   0
+Fail:  13/ 83 is not   0 rem   0
+Fail: 107/ 85 is not   0 rem   0
+Fail:   2/ 46 is not   0 rem   0
+Fail:  29/ 79 is not   0 rem   0
+Fail:  35/ 10 is not   0 rem   0
+Fail: 202/ 60 is not   0 rem   0
+Fail: 242/ 10 is not   0 rem   0
+Fail:  65/ 88 is not   0 rem   0
+Fail: 120/  9 is not   0 rem   0
+Fail: 235/ 54 is not   0 rem   0
+Fail: 198/ 46 is not   0 rem   0
+Fail: 188/ 42 is not   0 rem   0
+Fail:  11/113 is not   0 rem   0
+Fail: 133/ 79 is not   0 rem   0
+Fail:  59/ 58 is not   0 rem   0
+Fail: 126/ 21 is not   0 rem   0
+Fail: 241/ 89 is not   0 rem   0
+Fail:  98/ 76 is not   0 rem   0
+Fail: 159/ 15 is not   0 rem   0
+Fail: 248/ 55 is not   0 rem   0
+Fail: 159/ 92 is not   0 rem   0
+Number test cases passed:           0
+Number test cases failed:          40
+L52 "test_divider.v": $finish at simulation time 7210000
+0 simulation events (use +profile or +listcounts option to count)
+CPU time: 0.0 secs to compile + 0.0 secs to link + 0.0 secs in simulation
+End of Tool:	VERILOG-XL	08.20.001-p   Mar 14, 2015  01:00:57
