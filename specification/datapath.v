@@ -107,6 +107,8 @@ begin
     AddSub <= rRemainder[15:8] + rDivisor;
 end
 
+// TODO: gotta figure out how to implement the shift register.
+
 //always @(posedge shift)
 //begin
   //ShiftB = (ShiftA << 1); 
@@ -122,7 +124,7 @@ begin
     rRemainder = 16'b0000000000000000;
   end
   else begin
-    rRemainder <= ShiftA;
+    rRemainder <= ShiftA; //TODO: change to ShiftB after figuring out shift register
   end
 end
 
