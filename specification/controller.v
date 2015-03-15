@@ -5,7 +5,7 @@
 // template when writing your Verilog code.
 //
 // Names:  Steve Novakovic, Marc Lejay
-// Number:  13305081, XXXXXXXX
+// Number:  13305081, 47593108
 //
 
 module controller(load,
@@ -58,9 +58,23 @@ begin
     validr = 1'b0;
 end
 
-always @(curr_state or sign or start)  
+// diagnostic
+always @(sign)
 begin
-  if (start) begin
+  $display("SIGN %b", sign);
+end
+
+//
+// NOTE:
+// w/o clk sensitivity, the initialization then START case, where the state
+// is 00 twice in a row would not work with a sensitivity list based on the state
+// To get around this, we use posedge clk for curr <- next assignment and negedge clk
+// for next evaluation.
+//
+always @(posedge start or negedge clk)  
+begin
+  $display("START %b", start);
+  if (start == 1'b1) begin
     next_state = 2'b00;
   end
   else begin
@@ -117,8 +131,9 @@ begin
    endcase
 end
 
-always @(posedge clk or negedge reset)
-	if (reset == 1'b0) begin
+always @(posedge clk or posedge reset)
+begin
+	if (reset == 1'b1) begin
 		curr_state <= 2'b00;
 		counter <= 4'b0000;
 		increment <= 1'b0;
@@ -127,4 +142,17 @@ always @(posedge clk or negedge reset)
 		curr_state <= next_state;
 		counter <= counter + increment;
   end
+end
+
+// diagnostic
+always@(negedge clk)
+begin
+  $display("CURSTATE: %b", curr_state);
+  $display("NXTSTATE: %b", next_state);
+end
+
 endmodule
+
+
+
+

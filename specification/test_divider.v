@@ -39,7 +39,9 @@ divider u0(
 `define    QTR_PERIOD    5000
 always begin
    #(`QTR_PERIOD) clk = 1;
+   $display("CLK");
    #(`QTR_PERIOD) clk = 0;
+   $display("nCLK");
 end
 
 
@@ -63,7 +65,7 @@ task test_divider;
  
   reg [6:0] divisorin_copy; 
   reg [7:0] dividendin_copy;
-  integer cnt, num, numpass, numfail;
+  integer cnt, num, numpass, numfail, numtest;
   
   begin
 
@@ -74,16 +76,17 @@ task test_divider;
     numpass = 0;
     numfail = 0;
     reset = 0;
+    numtest = 1;
 
     // Do 40 test cases (you might want to test with many more
     // than this, just to be sure your design is ok).  Note that
     // your design does not have to handle the divide-by-zero case,
     // so we will make sure we don't test that case.
 
-    for(num=0;num<40;num=num+1) begin       
+    for(num=0;num<numtest;num=num+1) begin       
 
        // Assert Start for one cycle
-
+       $display("START = 1");
        start = 1;
 
        @(negedge clk);
@@ -104,6 +107,8 @@ task test_divider;
 
        dividendin = dividendin_copy;
        divisorin = divisorin_copy;
+       
+       $display("DIVIDEND INITIALIZED: %b", dividendin);
 
        // Now wait 17 cycles
  
@@ -112,6 +117,10 @@ task test_divider;
        end
 
        // Print Results for this test case
+       
+       //
+       // TODO: add check for "valid" output as they will be testing for it
+       //
 
        if (quotient * divisorin_copy + remainder == dividendin_copy) 
        begin

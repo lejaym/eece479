@@ -5,7 +5,7 @@
 // template when writing your Verilog code.
 //
 // Names:  Steve Novakovic, Marc Lejay
-// Number:  13305081, XXXXXXXX
+// Number:  13305081, 47593108
 //
 
 
@@ -13,7 +13,7 @@
 module divider(
          remainder,
          quotient,
-	 valid,
+	       valid,
          divisorin,
          dividendin,
          start,

@@ -5,7 +5,7 @@
 // template when writing your Verilog code.
 //
 // Names:  Steve Novakovic, Marc Lejay
-// Number:  13305081, XXXXXXXX
+// Number:  13305081, 47593108
 //
 
 module datapath(remainder, 
@@ -37,10 +37,13 @@ input reset;
 
 reg[7:0] rDivisor;
 
-wire[15:0] AddSub;
+reg[8:0] AddSub;
 
 reg[15:0] Mux;
-reg[15:0] SNS;
+
+wire[15:0] ShiftA;
+reg[15:0] ShiftB;
+
 reg[15:0] rRemainder;
 
 // Steve 2015-03-13
@@ -54,47 +57,81 @@ reg[15:0] rRemainder;
 assign quotient = rRemainder[7:0];
 assign remainder = rRemainder[15:9];
 assign sign = AddSub[7];
-
-
-assign AddSub[15:9] = rRemainder[15:9];
-assign AddSub[7:0] = rDivisor;
+assign ShiftA = Mux;
 
 // 8 Bit Divisor Register
-always @(posedge clk or negedge reset)
+always @(posedge clk or posedge reset)
 begin
-  if (reset == 1'b0)
+  if (reset == 1'b1) begin
     rDivisor = 8'b00000000;
+  end
   else begin
     if (load == 1'b1)
-      rDivisor[6:0] = divisorin;
+      rDivisor[7:0] = divisorin;
   end
 end
 
 // 16 Bit 3:1 Mux
-always @(sel)
+always @(sel or dividendin or AddSub or rRemainder)
 begin
-  case(sel)
+  case(sel) 
     2'b10: begin
+              $display("10 %b", dividendin);
               Mux[15:8] <= 8'b00000000;
               Mux[7:0] <= dividendin;
-            end
+           end
     2'b01: begin
+              $display("01 %b  %b", AddSub, rRemainder[7:0]);
               Mux[15:8] <= AddSub;
               Mux[7:0] <= rRemainder[7:0];
-            end
+           end
     2'b11: begin
               Mux <= rRemainder;
-            end
+              $display("11");
+           end
   endcase
+  $display("MUX: %b", Mux);
  end
  
-// SNS to rRemainder
-always @(posedge clk or negedge reset)
+// 8 bit add subtract
+// when add does not change
+// no action is performed on the register
+// TODO: should maybe rewrite this more realistically
+// to be two separate always and use neg/posedge
+always @(add or rDivisor or rRemainder)
 begin
-  if (reset == 1'b0)
-    rRemainder = 16'h0000;
+  $display("A/S %b %b", rRemainder[15:8], rDivisor);
+  if (add == 1'b0)
+    AddSub  <= rRemainder[15:8] - rDivisor;
   else
-    rRemainder = SNS;
+    AddSub <= rRemainder[15:8] + rDivisor;
+end
+
+//always @(posedge shift)
+//begin
+  //ShiftB = (ShiftA << 1); 
+  //ShiftB[0] = inbit;
+//end
+
+//assign SNS = Mux; 
+ 
+// SNS to rRemainder
+always @(posedge clk or posedge reset)
+begin
+  if (reset == 1'b1) begin
+    rRemainder = 16'b0000000000000000;
+  end
+  else begin
+    rRemainder <= ShiftA;
+  end
+end
+
+
+
+// diagnostic only
+always @(negedge clk)
+begin
+  $display("rRemainder (nege): %b", rRemainder);
 end
 
 endmodule
