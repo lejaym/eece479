@@ -8,7 +8,9 @@
 // Number:  13305081, 47593108
 //
 
-
+// run tb w/   
+// >> verilog controller.v datapath.v divider.v test_divider.v
+// (do not include other modules)
 
 module divider(
          remainder,

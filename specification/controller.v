@@ -29,127 +29,44 @@ input sign;
 input clk;
 input reset;
 
-reg [1:0] curr_state;
-reg [1:0] next_state;
+// SB current/next
+reg [1:0] SBc;
+wire [1:0] SBn;
+wire SBand, SBnor;
+wire ctrl0, ctrl1;
 
-reg loadr, addr, shiftr, inbitr, validr;
-reg [1:0] selr;
+assign SBand = SBc[0] & SBc[1];
+assign SBnor = ~(SBc[0] | SBc[1]);
 
-assign load = loadr;
-assign add = addr;
-assign shift = shiftr;
-assign inbit = inbitr;
-assign valid = validr;
-assign sel = selr;
+assign SBn[0] = (~start) & ((~(ctrl0 | SBand)) | SBand);
+assign SBn[1] = (~start) & ((~(ctrl1 | SBand)) | SBand);
 
-// State X: load  sel shift inbit add
-// State 00: 1    10  1     0     X
-// State 01: 0    01  0     X     0
-// State 10: 0    01  1     0     1
-// State 11: 0    11  1     1     X
+assign ctrl0 = (SBnor)&(~sign);
+assign ctrl1 = (SBnor)&sign;
 
-reg[3:0] counter;
-reg increment;
-always @(counter)
-begin
-  if (counter == 4'b1000)
-    validr = 1'b1;
-  else
-    validr = 1'b0;
-end
+assign add = SBc[1] & (~SBc[0]);
+assign load = SBc[1] & SBc[0];
+assign shift = SBc[1] | SBc[0];
+assign inbit = (~SBc[1]) & SBc[0];
 
-// diagnostic
-always @(sign)
-begin
-  $display("SIGN %b", sign);
-end
-
-//
-// NOTE:
-// w/o clk sensitivity, the initialization then START case, where the state
-// is 00 twice in a row would not work with a sensitivity list based on the state
-// To get around this, we use posedge clk for curr <- next assignment and negedge clk
-// for next evaluation.
-//
-always @(posedge start or negedge clk)  
-begin
-  $display("START %b", start);
-  if (start == 1'b1) begin
-    next_state = 2'b00;
-  end
-  else begin
-    case (curr_state) 
-       2'b00:  next_state = 2'b01; 
-       2'b01:  begin
-                case(sign)
-                  1'b1:   next_state = 2'b10;
-                  1'b0:   next_state = 2'b11;
-                endcase
-                increment = 1'b0;
-               end
-       2'b10:  begin
-                  next_state = 2'b01;
-                  increment = 1'b1;
-               end
-       2'b11:  begin
-                  next_state = 2'b01;
-                  increment = 1'b1;
-               end
-       default: $display("ERROR IN CURR_STATE %b", curr_state);
-    endcase
-  end
-end
-
-always @(curr_state) 
-begin
-   case (curr_state) 
-      2'b00:  begin
-                loadr = 1'b1;
-                selr = 2'b10;
-                shiftr = 1'b1;
-                inbitr = 1'b0;
-              end
-      2'b01:  begin
-                loadr = 1'b0;
-                selr = 2'b01;
-                shiftr = 1'b0;
-                addr = 1'b0;
-              end
-      2'b10:  begin
-                loadr = 1'b0;
-                selr = 2'b01;
-                shiftr = 1'b1;
-                inbitr = 1'b0;
-                addr = 1'b1;
-              end
-      2'b11:  begin
-                loadr = 1'b0;
-                selr = 2'b11;
-                shiftr = 1'b1;
-                inbitr = 1'b1;
-              end
-   endcase
-end
+assign sel[1] = SBc[0];
+assign sel[0] = ~(SBc[0] & SBc[1]);
 
 always @(posedge clk or posedge reset)
 begin
-	if (reset == 1'b1) begin
-		curr_state <= 2'b00;
-		counter <= 4'b0000;
-		increment <= 1'b0;
-	end
-	else begin
-		curr_state <= next_state;
-		counter <= counter + increment;
+  if (reset == 1'b1) begin
+    SBc = 2'b00;
   end
+  else begin
+    SBc <= ~SBn;
+  end  
 end
 
-// diagnostic
-always@(negedge clk)
-begin
-  $display("CURSTATE: %b", curr_state);
-  $display("NXTSTATE: %b", next_state);
-end
+// diagnostic only
+//always @(SBc or SBn)
+//begin
+//  $display("SBc, SBn: %b  %b", SBc, ~SBn);
+//end
 
 endmodule
 

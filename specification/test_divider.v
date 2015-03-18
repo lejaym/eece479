@@ -39,9 +39,9 @@ divider u0(
 `define    QTR_PERIOD    5000
 always begin
    #(`QTR_PERIOD) clk = 1;
-   $display("CLK");
+   //$display("CLK");
    #(`QTR_PERIOD) clk = 0;
-   $display("nCLK");
+   //$display("nCLK");
 end
 
 
@@ -76,7 +76,7 @@ task test_divider;
     numpass = 0;
     numfail = 0;
     reset = 0;
-    numtest = 1;
+    numtest = 40;
 
     // Do 40 test cases (you might want to test with many more
     // than this, just to be sure your design is ok).  Note that
@@ -86,10 +86,10 @@ task test_divider;
     for(num=0;num<numtest;num=num+1) begin       
 
        // Assert Start for one cycle
-       $display("START = 1");
        start = 1;
 
        @(negedge clk);
+       //$display("START = 1");
 
        // Negate start and set inputs
 
@@ -108,7 +108,7 @@ task test_divider;
        dividendin = dividendin_copy;
        divisorin = divisorin_copy;
        
-       $display("DIVIDEND INITIALIZED: %b", dividendin);
+       //$display("DIVIDEND INITIALIZED: %b", dividendin);
 
        // Now wait 17 cycles
  
