@@ -1,0 +1,119 @@
+magic
+tech scmos
+timestamp 1427667321
+<< pwell >>
+rect -27 -29 29 -2
+<< nwell >>
+rect -27 2 29 33
+<< polysilicon >>
+rect -19 30 21 32
+rect -19 25 -17 30
+rect -9 25 -7 27
+rect 9 25 11 27
+rect 19 25 21 30
+rect -19 3 -17 5
+rect -9 3 -7 5
+rect 9 3 11 5
+rect -9 2 11 3
+rect -9 1 10 2
+rect -19 -1 -7 1
+rect -19 -5 -17 -1
+rect 9 -2 10 1
+rect -9 -5 -7 -3
+rect 9 -5 11 -2
+rect 19 -5 21 5
+rect -19 -17 -17 -15
+rect -9 -19 -7 -15
+rect 9 -17 11 -15
+rect 19 -18 21 -15
+rect 19 -19 20 -18
+rect -9 -21 20 -19
+<< ndiffusion >>
+rect -21 -15 -19 -5
+rect -17 -15 -15 -5
+rect -11 -15 -9 -5
+rect -7 -15 -5 -5
+rect 7 -15 9 -5
+rect 11 -15 13 -5
+rect 17 -15 19 -5
+rect 21 -15 23 -5
+<< pdiffusion >>
+rect -21 5 -19 25
+rect -17 5 -15 25
+rect -11 5 -9 25
+rect -7 5 -5 25
+rect 7 5 9 25
+rect 11 5 13 25
+rect 17 5 19 25
+rect 21 5 23 25
+<< metal1 >>
+rect -27 29 22 33
+rect 13 25 17 29
+rect -25 0 -21 5
+rect -25 -5 -21 -4
+rect -15 -5 -11 5
+rect -5 0 -1 5
+rect -5 -5 -1 -4
+rect 3 0 7 5
+rect 23 2 27 5
+rect 14 -2 27 2
+rect 3 -5 7 -4
+rect 23 -5 27 -2
+rect -15 -16 -11 -15
+rect -27 -22 -25 -18
+rect 13 -25 17 -15
+rect 24 -22 29 -18
+rect -27 -29 23 -25
+<< metal2 >>
+rect -25 0 -21 33
+rect -5 0 -1 33
+rect 3 -8 7 -4
+rect -25 -12 7 -8
+rect -25 -18 -21 -12
+rect -15 -25 -11 -20
+<< ntransistor >>
+rect -19 -15 -17 -5
+rect -9 -15 -7 -5
+rect 9 -15 11 -5
+rect 19 -15 21 -5
+<< ptransistor >>
+rect -19 5 -17 25
+rect -9 5 -7 25
+rect 9 5 11 25
+rect 19 5 21 25
+<< polycontact >>
+rect 10 -2 14 2
+rect 20 -22 24 -18
+<< ndcontact >>
+rect -25 -15 -21 -5
+rect -15 -15 -11 -5
+rect -5 -15 -1 -5
+rect 3 -15 7 -5
+rect 13 -15 17 -5
+rect 23 -15 27 -5
+<< pdcontact >>
+rect -25 5 -21 25
+rect -15 5 -11 25
+rect -5 5 -1 25
+rect 3 5 7 25
+rect 13 5 17 25
+rect 23 5 27 25
+<< m2contact >>
+rect -25 -4 -21 0
+rect -5 -4 -1 0
+rect 3 -4 7 0
+rect -25 -22 -21 -18
+rect -15 -20 -11 -16
+<< psubstratepcontact >>
+rect 23 -29 29 -25
+<< nsubstratencontact >>
+rect 22 29 29 33
+<< labels >>
+rlabel metal1 -27 29 22 33 5 Vdd
+rlabel metal1 -27 -29 23 -25 1 Gnd
+rlabel metal2 -25 0 -21 33 3 In
+rlabel metal2 -5 0 -1 33 1 Right
+rlabel metal1 24 -22 29 -18 7 ShiftIn
+rlabel metal1 -27 -22 -25 -18 3 ShiftOut
+rlabel metal2 -15 -25 -11 -20 1 Out
+<< end >>

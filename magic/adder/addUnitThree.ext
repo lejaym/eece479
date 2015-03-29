@@ -1,0 +1,72 @@
+timestamp 1427434717
+version 7.5
+tech scmos
+style lambda=1.0(scna20_orb)
+scale 1000 1 100
+resistclasses 26670 59550 23860 19690 27260 2000000 49 26 2505830
+node "a_n22_n67#" 278 0 -22 -67 ndc 200 100 0 0 0 0 0 0 0 0 0 0 332 174 0 0 0 0
+node "a_n24_n42#" 33 0 -24 -42 ndiff 80 36 0 0 0 0 0 0 0 0 0 0 40 28 0 0 0 0
+node "a_n34_n42#" 33 0 -34 -42 ndiff 80 36 0 0 0 0 0 0 0 0 0 0 40 28 0 0 0 0
+node "a_n24_n22#" 149 0 -24 -22 pdiff 0 0 160 56 0 0 0 0 0 0 0 0 80 48 0 0 0 0
+node "a_n34_n22#" 149 0 -34 -22 pdiff 0 0 160 56 0 0 0 0 0 0 0 0 80 48 0 0 0 0
+node "sum" 244 752 -52 -42 ndc 60 32 120 52 0 0 0 0 0 0 0 0 240 106 124 70 0 0
+node "A" 1778 7124 -36 -49 p 0 0 0 0 310 308 0 0 0 0 0 0 76 54 368 192 0 0
+node "a_n47_n29#" 707 6716 -47 -29 pc 80 36 160 56 96 96 0 0 0 0 0 0 300 158 0 0 0 0
+node "Cout" 244 988 -4 -67 ndiff 60 32 120 52 0 0 0 0 0 0 0 0 160 96 580 298 0 0
+node "a_n22_13#" 831 0 -22 13 pdc 0 0 400 160 0 0 0 0 0 0 0 0 452 234 0 0 0 0
+node "X" 1306 4053 -6 -69 p 0 0 0 0 229 228 0 0 0 0 0 0 36 26 52 34 0 0
+node "Cin" 1306 4053 -19 36 pc 0 0 0 0 229 228 0 0 0 0 0 0 36 26 52 34 0 0
+node "BxnorAdd" 2436 5872 -31 1 pc 0 0 0 0 440 428 0 0 0 0 0 0 124 78 324 170 0 0
+node "Gnd" 581 14852 -54 -70 pw 280 136 52 34 0 0 0 0 0 0 0 0 712 364 0 0 0 0
+node "w_n54_n25#" 4412 20680 -54 -25 nw 52 34 560 216 0 0 0 0 0 0 0 0 1052 534 0 0 4758 278
+cap "Cin" "a_n47_n29#" 240
+cap "Gnd" "a_n47_n29#" 2394
+cap "BxnorAdd" "Cout" 1768
+cap "Gnd" "X" 5560
+cap "Cin" "Cout" 152
+cap "Cin" "a_n22_n67#" 240
+cap "Gnd" "sum" 4912
+cap "Gnd" "Cout" 1396
+cap "Gnd" "a_n22_n67#" 9212
+cap "A" "a_n22_13#" 240
+cap "w_n54_n25#" "a_n22_13#" 8836
+cap "A" "w_n54_n25#" 12148
+cap "Gnd" "BxnorAdd" 9530
+cap "a_n22_13#" "X" 240
+cap "A" "a_n47_n29#" 240
+cap "a_n47_n29#" "w_n54_n25#" 2394
+cap "w_n54_n25#" "X" 6598
+cap "Cin" "Gnd" 5560
+cap "Cout" "a_n22_13#" 5580
+cap "A" "Cout" 896
+cap "A" "a_n22_n67#" 3795
+cap "w_n54_n25#" "sum" 2444
+cap "w_n54_n25#" "Cout" 6956
+cap "Cout" "X" 152
+cap "BxnorAdd" "a_n22_13#" 1792
+cap "X" "a_n22_n67#" 240
+cap "A" "BxnorAdd" 152
+cap "BxnorAdd" "w_n54_n25#" 34547
+cap "Cin" "a_n22_13#" 240
+cap "BxnorAdd" "a_n47_n29#" 240
+cap "Cout" "a_n22_n67#" 3060
+cap "Cin" "w_n54_n25#" 6598
+cap "A" "Gnd" 12294
+device mosfet nfet 14 -67 15 -66 2 10 "Gnd" "BxnorAdd" 4 0 "a_n22_n67#" 10 0 "Gnd" 10 0
+device mosfet nfet -6 -67 -5 -66 2 10 "Gnd" "X" 4 0 "Gnd" 10 0 "Cout" 10 0
+device mosfet nfet -16 -67 -15 -66 2 10 "Gnd" "Cin" 4 0 "a_n22_n67#" 10 0 "Gnd" 10 0
+device mosfet nfet 4 -42 5 -41 2 10 "Gnd" "A" 4 0 "a_n22_n67#" 10 0 "Gnd" 10 0
+device mosfet nfet -6 -42 -5 -41 2 10 "Gnd" "X" 4 0 "a_n47_n29#" 10 0 "a_n22_n67#" 10 0
+device mosfet nfet -16 -42 -15 -41 2 10 "Gnd" "Cin" 4 0 "a_n24_n42#" 10 0 "a_n47_n29#" 10 0
+device mosfet nfet -26 -42 -25 -41 2 10 "Gnd" "BxnorAdd" 4 0 "a_n34_n42#" 10 0 "a_n24_n42#" 10 0
+device mosfet nfet -36 -42 -35 -41 2 10 "Gnd" "A" 4 0 "Gnd" 10 0 "a_n34_n42#" 10 0
+device mosfet nfet -46 -42 -45 -41 2 10 "Gnd" "a_n47_n29#" 4 0 "sum" 10 0 "Gnd" 10 0
+device mosfet pfet 4 -22 5 -21 2 20 "w_n54_n25#" "A" 4 0 "a_n22_13#" 20 0 "w_n54_n25#" 20 0
+device mosfet pfet -6 -22 -5 -21 2 20 "w_n54_n25#" "X" 4 0 "a_n47_n29#" 20 0 "a_n22_13#" 20 0
+device mosfet pfet -16 -22 -15 -21 2 20 "w_n54_n25#" "Cin" 4 0 "a_n24_n22#" 20 0 "a_n47_n29#" 20 0
+device mosfet pfet -26 -22 -25 -21 2 20 "w_n54_n25#" "BxnorAdd" 4 0 "a_n34_n22#" 20 0 "a_n24_n22#" 20 0
+device mosfet pfet -36 -22 -35 -21 2 20 "w_n54_n25#" "A" 4 0 "w_n54_n25#" 20 0 "a_n34_n22#" 20 0
+device mosfet pfet -46 -22 -45 -21 2 20 "w_n54_n25#" "a_n47_n29#" 4 0 "sum" 20 0 "w_n54_n25#" 20 0
+device mosfet pfet 14 13 15 14 2 20 "w_n54_n25#" "BxnorAdd" 4 0 "a_n22_13#" 20 0 "w_n54_n25#" 20 0
+device mosfet pfet -6 13 -5 14 2 20 "w_n54_n25#" "X" 4 0 "w_n54_n25#" 20 0 "Cout" 20 0
+device mosfet pfet -16 13 -15 14 2 20 "w_n54_n25#" "Cin" 4 0 "a_n22_13#" 20 0 "w_n54_n25#" 20 0

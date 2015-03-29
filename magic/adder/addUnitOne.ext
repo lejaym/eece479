@@ -1,0 +1,46 @@
+timestamp 1427389379
+version 7.5
+tech scmos
+style lambda=1.0(scna20_orb)
+scale 1000 1 100
+resistclasses 26670 59550 23860 19690 27260 2000000 49 26 2505830
+node "BxnorAdd" 183 7968 -2 -15 ndiff 80 36 160 56 0 0 0 0 0 0 0 0 252 134 204 110 0 0
+node "a_n22_n15#" 717 3948 -22 -15 ndiff 120 64 240 104 0 0 0 0 0 0 0 0 800 378 0 0 0 0
+node "B" 889 8164 -25 -22 pc 60 32 120 52 124 120 0 0 0 0 0 0 448 240 388 202 0 0
+node "AddOut" 244 2560 -10 -42 ndc 60 32 120 52 0 0 0 0 0 0 0 0 414 168 416 216 0 0
+node "AddIn" 1288 3819 5 35 pc 0 0 0 0 224 224 0 0 0 0 0 0 140 78 0 0 0 0
+node "a_n5_n29#" 1532 952 -5 -29 pc 60 32 120 52 224 224 0 0 0 0 0 0 366 152 416 216 0 0
+node "Gnd" 283 15792 -39 -45 pw 140 68 32 24 0 0 0 0 0 0 0 0 514 258 176 96 0 0
+node "Vdd" 3096 15792 -39 2 nw 32 24 280 108 0 0 0 0 0 0 0 0 612 306 164 90 3906 250
+cap "a_n22_n15#" "AddOut" 2520
+cap "Vdd" "AddOut" 12364
+cap "AddIn" "a_n5_n29#" 960
+cap "AddIn" "BxnorAdd" 240
+cap "a_n22_n15#" "a_n5_n29#" 240
+cap "Vdd" "a_n5_n29#" 13472
+cap "Vdd" "BxnorAdd" 564
+cap "B" "Gnd" 13236
+cap "BxnorAdd" "a_n5_n29#" 720
+cap "Gnd" "AddIn" 6036
+cap "a_n22_n15#" "Gnd" 3384
+cap "B" "AddIn" 240
+cap "Gnd" "AddOut" 3566
+cap "B" "a_n22_n15#" 240
+cap "B" "Vdd" 7596
+cap "B" "AddOut" 2160
+cap "Gnd" "a_n5_n29#" 14378
+cap "a_n22_n15#" "AddIn" 240
+cap "Vdd" "AddIn" 9629
+cap "Gnd" "BxnorAdd" 1284
+cap "a_n22_n15#" "Vdd" 18580
+cap "B" "a_n5_n29#" 240
+device mosfet nfet 6 -42 7 -41 2 10 "Gnd" "AddIn" 4 0 "Gnd" 10 0 "a_n5_n29#" 10 0
+device mosfet nfet -4 -42 -3 -41 2 10 "Gnd" "a_n5_n29#" 4 0 "AddOut" 10 0 "Gnd" 10 0
+device mosfet nfet 6 -15 7 -14 2 10 "Gnd" "AddIn" 4 0 "BxnorAdd" 10 0 "B" 10 0
+device mosfet nfet -4 -15 -3 -14 2 10 "Gnd" "a_n5_n29#" 4 0 "a_n22_n15#" 10 0 "BxnorAdd" 10 0
+device mosfet nfet -24 -15 -23 -14 2 10 "Gnd" "B" 4 0 "Gnd" 10 0 "a_n22_n15#" 10 0
+device mosfet pfet 6 5 7 6 2 20 "Vdd" "AddIn" 4 0 "BxnorAdd" 20 0 "a_n22_n15#" 20 0
+device mosfet pfet -4 5 -3 6 2 20 "Vdd" "a_n5_n29#" 4 0 "B" 20 0 "BxnorAdd" 20 0
+device mosfet pfet -24 5 -23 6 2 20 "Vdd" "B" 4 0 "Vdd" 20 0 "a_n22_n15#" 20 0
+device mosfet pfet 6 42 7 43 2 20 "Vdd" "AddIn" 4 0 "Vdd" 20 0 "a_n5_n29#" 20 0
+device mosfet pfet -4 42 -3 43 2 20 "Vdd" "a_n5_n29#" 4 0 "AddOut" 20 0 "Vdd" 20 0

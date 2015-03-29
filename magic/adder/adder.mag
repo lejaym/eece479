@@ -1,0 +1,41 @@
+magic
+tech scmos
+timestamp 1427434717
+<< pwell >>
+rect -24 -37 39 7
+<< nwell >>
+rect -37 -118 42 -41
+<< polysilicon >>
+rect -9 -109 -7 -96
+rect 21 -109 23 -96
+<< metal1 >>
+rect 48 117 63 121
+rect -47 -1 48 7
+rect -47 -224 -42 -1
+rect 58 -98 63 117
+rect -37 -106 63 -98
+rect -47 -228 -38 -224
+<< metal2 >>
+rect 38 5 42 11
+rect 16 1 42 5
+rect 16 -5 20 1
+rect -28 -99 -18 -95
+rect -22 -110 -18 -99
+rect 0 -109 4 -93
+rect 10 -110 14 -94
+use addUnitOne  addUnitOne_0
+timestamp 1427389379
+transform 1 0 15 0 1 52
+box -51 -49 33 75
+use addUnitTwo  addUnitTwo_0
+timestamp 1427413241
+transform 1 0 12 0 1 -39
+box -44 -66 20 42
+use addUnitThree  addUnitThree_0
+timestamp 1427434717
+transform 1 0 17 0 1 -154
+box -57 -74 24 52
+<< labels >>
+rlabel metal1 -47 -1 48 7 1 Gnd
+rlabel metal1 -37 -106 63 -98 1 Vdd
+<< end >>

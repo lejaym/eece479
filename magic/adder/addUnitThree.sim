@@ -1,0 +1,59 @@
+| units: 100 tech: scmos format: MIT
+p Cin a_n22_13# Vdd 2 20 -16 13
+p X Vdd Cout 2 20 -6 13
+p BxnorAdd a_n22_13# Vdd 2 20 14 13
+p a_n47_n29# sum Vdd 2 20 -46 -22
+p A Vdd a_n34_n22# 2 20 -36 -22
+p BxnorAdd a_n34_n22# a_n24_n22# 2 20 -26 -22
+p Cin a_n24_n22# a_n47_n29# 2 20 -16 -22
+p X a_n47_n29# a_n22_13# 2 20 -6 -22
+p A a_n22_13# Vdd 2 20 4 -22
+n a_n47_n29# sum Gnd 2 10 -46 -42
+n A Gnd a_n34_n42# 2 10 -36 -42
+n BxnorAdd a_n34_n42# a_n24_n42# 2 10 -26 -42
+n Cin a_n24_n42# a_n47_n29# 2 10 -16 -42
+n X a_n47_n29# a_n22_n67# 2 10 -6 -42
+n A a_n22_n67# Gnd 2 10 4 -42
+n Cin a_n22_n67# Gnd 2 10 -16 -67
+n X Gnd Cout 2 10 -6 -67
+n BxnorAdd a_n22_n67# Gnd 2 10 14 -67
+C Vdd Cin 6.6
+C a_n22_13# Cout 5.6
+C Gnd Cin 5.6
+C Vdd X 6.6
+C Vdd BxnorAdd 34.5
+C A a_n22_n67# 3.8
+C Vdd A 12.1
+C Gnd X 5.6
+C Vdd a_n22_13# 8.8
+C Gnd BxnorAdd 9.5
+C Gnd A 12.3
+C Vdd sum 2.4
+C Gnd sum 4.9
+C Cout a_n22_n67# 3.1
+C Vdd Cout 7.0
+C Gnd a_n22_n67# 9.2
+C Vdd a_n47_n29# 2.4
+C Gnd a_n47_n29# 2.4
+R a_n22_n67# 278
+R a_n24_n42# 33
+R a_n34_n42# 33
+R a_n24_n22# 149
+R a_n34_n22# 149
+R sum 244
+C A GND 7.1
+R A 1778
+C a_n47_n29# GND 6.7
+R a_n47_n29# 707
+R Cout 244
+R a_n22_13# 831
+C X GND 4.1
+R X 1306
+C Cin GND 4.1
+R Cin 1306
+C BxnorAdd GND 5.9
+R BxnorAdd 2436
+C Gnd GND 14.9
+R Gnd 581
+C Vdd GND 21.2
+R Vdd 4412

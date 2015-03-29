@@ -1,0 +1,35 @@
+| units: 100 tech: scmos format: MIT
+n BxnorAdd a_n19_5# Gnd 2 10 -11 23
+n BxnorAdd Gnd a_1_5# 2 10 -1 23
+n A a_1_5# Gnd 2 10 9 23
+n A X a_n19_5# 2 10 -21 5
+p A X a_n19_n25# 2 20 -21 -25
+n Cin X a_1_5# 2 10 -1 5
+p Cin X a_1_n56# 2 20 -1 -25
+p BxnorAdd a_n19_n25# Vdd 2 19 -11 -56
+p BxnorAdd Vdd a_1_n56# 2 19 -1 -56
+p A a_1_n56# Vdd 2 19 9 -56
+C Vdd X 8.2
+C Vdd a_n19_n25# 2.3
+C Gnd A 15.9
+C Vdd A 11.3
+C Gnd BxnorAdd 18.2
+C Vdd BxnorAdd 14.0
+C Vdd Cin 8.3
+C Cout GND 6.3
+R a_1_n56# 489
+C Cin GND 5.2
+R Cin 585
+R a_n19_n25# 537
+C X GND 3.4
+R X 685
+R a_1_5# 163
+R a_n19_5# 170
+C A GND 3.0
+R A 1803
+C BxnorAdd GND 5.3
+R BxnorAdd 2196
+C Vdd GND 9.2
+R Vdd 3428
+C Gnd GND 10.0
+R Gnd 238

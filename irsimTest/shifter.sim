@@ -1,0 +1,9 @@
+| units: 100 tech: scmos format: MIT
+p shiftin vdd shiftb 2 40
+n shiftin shiftb gnd 2 20
+p shiftb vdd shift 2 40
+n shiftb shift gnd 2 20
+p shiftb left out 2 40
+n shift left out 2 20
+p shift in out 2 40
+n shiftb in out 2 20

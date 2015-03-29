@@ -1,0 +1,105 @@
+| units: 100 tech: scmos format: MIT
+p addUnitTwo_0/Cin addUnitThree_0/a_n22_13# Vdd 2 20 1 -141
+p addUnitTwo_0/X Vdd addUnitTwo_0/Cout 2 20 11 -141
+p addUnitTwo_0/BxnorAdd addUnitThree_0/a_n22_13# Vdd 2 20 31 -141
+p addUnitThree_0/a_n47_n29# addUnitThree_0/sum Vdd 2 20 -29 -176
+p addUnitTwo_0/A Vdd addUnitThree_0/a_n34_n22# 2 20 -19 -176
+p addUnitTwo_0/BxnorAdd addUnitThree_0/a_n34_n22# addUnitThree_0/a_n24_n22# 2 20 -9 -176
+p addUnitTwo_0/Cin addUnitThree_0/a_n24_n22# addUnitThree_0/a_n47_n29# 2 20 1 -176
+p addUnitTwo_0/X addUnitThree_0/a_n47_n29# addUnitThree_0/a_n22_13# 2 20 11 -176
+p addUnitTwo_0/A addUnitThree_0/a_n22_13# Vdd 2 20 21 -176
+n addUnitThree_0/a_n47_n29# addUnitThree_0/sum Gnd 2 10 -29 -196
+n addUnitTwo_0/A Gnd addUnitThree_0/a_n34_n42# 2 10 -19 -196
+n addUnitTwo_0/BxnorAdd addUnitThree_0/a_n34_n42# addUnitThree_0/a_n24_n42# 2 10 -9 -196
+n addUnitTwo_0/Cin addUnitThree_0/a_n24_n42# addUnitThree_0/a_n47_n29# 2 10 1 -196
+n addUnitTwo_0/X addUnitThree_0/a_n47_n29# addUnitThree_0/a_n22_n67# 2 10 11 -196
+n addUnitTwo_0/A addUnitThree_0/a_n22_n67# Gnd 2 10 21 -196
+n addUnitTwo_0/Cin addUnitThree_0/a_n22_n67# Gnd 2 10 1 -221
+n addUnitTwo_0/X Gnd addUnitTwo_0/Cout 2 10 11 -221
+n addUnitTwo_0/BxnorAdd addUnitThree_0/a_n22_n67# Gnd 2 10 31 -221
+n addUnitTwo_0/BxnorAdd addUnitTwo_0/a_n19_5# Gnd 2 10 1 -16
+n addUnitTwo_0/BxnorAdd Gnd addUnitTwo_0/a_1_5# 2 10 11 -16
+n addUnitTwo_0/A addUnitTwo_0/a_1_5# Gnd 2 10 21 -16
+n addUnitTwo_0/A addUnitTwo_0/X addUnitTwo_0/a_n19_5# 2 10 -9 -34
+p addUnitTwo_0/A addUnitTwo_0/X addUnitTwo_0/a_n19_n25# 2 20 -9 -64
+n addUnitTwo_0/Cin addUnitTwo_0/X addUnitTwo_0/a_1_5# 2 10 11 -34
+p addUnitTwo_0/Cin addUnitTwo_0/X addUnitTwo_0/a_1_n56# 2 20 11 -64
+p addUnitTwo_0/BxnorAdd addUnitTwo_0/a_n19_n25# Vdd 2 19 1 -95
+p addUnitTwo_0/BxnorAdd Vdd addUnitTwo_0/a_1_n56# 2 19 11 -95
+p addUnitTwo_0/A addUnitTwo_0/a_1_n56# Vdd 2 19 21 -95
+p addUnitOne_0/a_n5_n29# addUnitOne_0/AddOut Vdd 2 20 11 94
+p addUnitOne_0/AddIn Vdd addUnitOne_0/a_n5_n29# 2 20 21 94
+p addUnitOne_0/B Vdd addUnitOne_0/a_n22_n15# 2 20 -9 57
+p addUnitOne_0/a_n5_n29# addUnitOne_0/B addUnitTwo_0/BxnorAdd 2 20 11 57
+p addUnitOne_0/AddIn addUnitTwo_0/BxnorAdd addUnitOne_0/a_n22_n15# 2 20 21 57
+n addUnitOne_0/B Gnd addUnitOne_0/a_n22_n15# 2 10 -9 37
+n addUnitOne_0/a_n5_n29# addUnitOne_0/a_n22_n15# addUnitTwo_0/BxnorAdd 2 10 11 37
+n addUnitOne_0/AddIn addUnitTwo_0/BxnorAdd addUnitOne_0/B 2 10 21 37
+n addUnitOne_0/a_n5_n29# addUnitOne_0/AddOut Gnd 2 10 11 10
+n addUnitOne_0/AddIn Gnd addUnitOne_0/a_n5_n29# 2 10 21 10
+C addUnitThree_0/a_n47_n29# Gnd 2.4
+C Gnd addUnitOne_0/AddOut 3.6
+C addUnitTwo_0/Cin Vdd 17.9
+C addUnitOne_0/AddOut addUnitOne_0/B 2.2
+C addUnitTwo_0/X Vdd 16.9
+C addUnitTwo_0/Cin Gnd 7.4
+C addUnitOne_0/AddOut addUnitOne_0/a_n22_n15# 2.5
+C addUnitTwo_0/a_n19_n25# Vdd 2.3
+C addUnitTwo_0/A Vdd 27.4
+C Vdd addUnitOne_0/B 7.6
+C addUnitTwo_0/Cout addUnitThree_0/a_n22_n67# 3.1
+C addUnitTwo_0/X Gnd 6.5
+C addUnitThree_0/a_n22_13# Vdd 8.8
+C Vdd addUnitOne_0/a_n5_n29# 13.5
+C addUnitThree_0/sum Vdd 2.4
+C addUnitTwo_0/A Gnd 28.2
+C Gnd addUnitOne_0/B 13.2
+C Vdd addUnitOne_0/a_n22_n15# 18.6
+C Gnd addUnitOne_0/a_n5_n29# 14.4
+C addUnitThree_0/sum Gnd 4.9
+C Gnd addUnitOne_0/a_n22_n15# 3.4
+C addUnitTwo_0/Cout Vdd 13.3
+C Vdd addUnitOne_0/AddIn 9.6
+C Gnd addUnitOne_0/AddIn 6.0
+C addUnitThree_0/a_n22_13# addUnitTwo_0/Cout 5.6
+C addUnitThree_0/a_n22_n67# Gnd 9.2
+C addUnitTwo_0/BxnorAdd Vdd 53.1
+C addUnitTwo_0/A addUnitThree_0/a_n22_n67# 3.8
+C addUnitThree_0/a_n47_n29# Vdd 2.4
+C Vdd addUnitOne_0/AddOut 12.4
+C addUnitTwo_0/BxnorAdd Gnd 32.9
+C addUnitOne_0/a_n22_n15# GND 3.9
+R addUnitOne_0/a_n22_n15# 717
+C addUnitOne_0/B GND 8.2
+R addUnitOne_0/B 889
+C addUnitOne_0/AddOut GND 2.6
+R addUnitOne_0/AddOut 244
+C addUnitOne_0/AddIn GND 3.8
+R addUnitOne_0/AddIn 1288
+R addUnitOne_0/a_n5_n29# 1532
+C Gnd GND 81.0
+R Gnd 1535
+C Vdd GND 77.0
+R Vdd 17095
+R addUnitTwo_0/a_1_n56# 489
+R addUnitTwo_0/a_n19_n25# 537
+R addUnitTwo_0/a_1_5# 163
+R addUnitTwo_0/a_n19_5# 170
+R addUnitThree_0/a_n22_n67# 278
+R addUnitThree_0/a_n24_n42# 33
+R addUnitThree_0/a_n34_n42# 33
+R addUnitThree_0/a_n24_n22# 149
+R addUnitThree_0/a_n34_n22# 149
+R addUnitThree_0/sum 244
+C addUnitTwo_0/A GND 5.9
+R addUnitTwo_0/A 3582
+C addUnitThree_0/a_n47_n29# GND 6.7
+R addUnitThree_0/a_n47_n29# 707
+R addUnitTwo_0/Cout 245
+R addUnitThree_0/a_n22_13# 831
+C addUnitTwo_0/X GND 5.4
+R addUnitTwo_0/X 1991
+C addUnitTwo_0/Cin GND 6.3
+R addUnitTwo_0/Cin 1940
+C addUnitTwo_0/BxnorAdd GND 19.1
+R addUnitTwo_0/BxnorAdd 5066
