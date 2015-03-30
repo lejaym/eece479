@@ -52,7 +52,7 @@ set in 001
 s
 path MUXOUT
 | set to 11, should only respond to REGIN
-print DIVIN
+print REGIN
 set in 000
 set sel 11
 s
