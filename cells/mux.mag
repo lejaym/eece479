@@ -1,6 +1,10 @@
 magic
 tech scmos
-timestamp 1427677341
+timestamp 1427695733
+<< pwell >>
+rect 0 68 422 115
+<< nwell >>
+rect 0 0 422 68
 << polysilicon >>
 rect 364 103 366 105
 rect 392 103 394 105
@@ -83,7 +87,7 @@ rect 364 71 366 73
 rect 364 70 378 71
 rect 364 66 366 70
 rect 364 65 378 66
-rect 364 61 366 63
+rect 364 61 366 65
 rect 385 61 386 73
 rect 392 71 394 73
 rect 392 65 402 71
@@ -185,7 +189,18 @@ rect 366 12 367 32
 rect 391 12 392 32
 rect 394 12 395 32
 << metal1 >>
-rect 0 107 422 115
+rect 0 113 422 115
+rect 0 109 45 113
+rect 52 109 82 113
+rect 89 109 126 113
+rect 133 109 165 113
+rect 172 109 209 113
+rect 216 109 267 113
+rect 274 109 315 113
+rect 322 109 353 113
+rect 360 109 385 113
+rect 392 109 422 113
+rect 0 107 422 109
 rect 34 103 44 107
 rect 29 91 34 95
 rect 70 91 80 107
@@ -202,6 +217,7 @@ rect 395 103 399 107
 rect 0 74 7 80
 rect 13 81 34 85
 rect 117 81 138 85
+rect 0 62 7 65
 rect 13 41 26 81
 rect 44 73 54 77
 rect 34 67 54 73
@@ -266,19 +282,19 @@ rect 342 93 359 103
 rect 251 46 271 52
 rect 282 55 297 61
 rect 276 53 297 55
-rect 300 64 302 70
 rect 322 68 326 75
-rect 317 64 326 68
 rect 300 59 306 64
+rect 317 64 326 68
+rect 335 65 337 71
+rect 300 53 302 59
 rect 317 58 318 64
 rect 324 58 326 64
-rect 331 59 337 65
 rect 317 54 326 58
 rect 238 38 243 42
 rect 238 34 251 38
 rect 276 34 282 53
 rect 322 46 326 54
-rect 335 53 337 59
+rect 331 59 337 65
 rect 342 59 348 93
 rect 367 83 371 93
 rect 306 42 317 46
@@ -311,7 +327,19 @@ rect 395 32 399 41
 rect 374 12 387 32
 rect 367 8 371 12
 rect 395 8 399 12
-rect 0 0 422 8
+rect 0 6 422 8
+rect 0 2 41 6
+rect 48 2 74 6
+rect 81 2 145 6
+rect 152 2 182 6
+rect 189 2 212 6
+rect 219 2 258 6
+rect 265 2 296 6
+rect 303 2 321 6
+rect 328 2 360 6
+rect 367 2 388 6
+rect 395 2 422 6
+rect 0 0 422 2
 << metal2 >>
 rect 0 103 113 110
 rect 0 87 7 103
@@ -322,16 +350,17 @@ rect 103 71 360 73
 rect 7 65 67 71
 rect 103 65 105 71
 rect 111 65 218 71
-rect 224 65 331 71
-rect 337 65 353 71
-rect 359 65 360 71
+rect 224 70 353 71
+rect 224 65 300 70
 rect 0 62 67 65
+rect 306 65 353 70
+rect 359 65 360 71
 rect 59 59 67 62
 rect 19 49 34 55
 rect 59 53 83 59
 rect 89 53 187 59
-rect 193 53 300 59
-rect 306 53 342 59
+rect 193 53 331 59
+rect 337 53 342 59
 rect 348 53 350 59
 rect 59 51 350 53
 rect 19 0 29 49
@@ -395,15 +424,15 @@ rect 163 55 169 61
 rect 205 58 211 64
 rect 127 24 133 30
 rect 216 53 222 59
-rect 302 64 308 70
 rect 276 55 282 61
+rect 302 53 308 59
 rect 318 58 324 64
 rect 240 24 246 30
 rect 410 75 415 81
+rect 329 65 335 71
 rect 366 66 378 70
 rect 381 61 385 73
 rect 402 65 407 71
-rect 329 53 335 59
 rect 113 11 122 17
 << ndcontact >>
 rect 34 99 44 103
@@ -484,18 +513,39 @@ rect 187 53 193 59
 rect 218 65 224 71
 rect 117 34 125 42
 rect 266 77 274 84
-rect 300 53 306 59
-rect 331 65 337 71
+rect 300 64 306 70
 rect 230 34 238 42
+rect 331 53 337 59
 rect 342 53 348 59
 rect 353 65 359 71
+<< psubstratepcontact >>
+rect 45 109 52 113
+rect 82 109 89 113
+rect 126 109 133 113
+rect 165 109 172 113
+rect 209 109 216 113
+rect 267 109 274 113
+rect 315 109 322 113
+rect 353 109 360 113
+rect 385 109 392 113
+<< nsubstratencontact >>
+rect 41 2 48 6
+rect 74 2 81 6
+rect 145 2 152 6
+rect 182 2 189 6
+rect 212 2 219 6
+rect 258 2 265 6
+rect 296 2 303 6
+rect 321 2 328 6
+rect 360 2 367 6
+rect 388 2 395 6
 << labels >>
 rlabel metal1 415 76 422 80 0 S0
 rlabel metal1 407 66 422 70 0 S1
-rlabel metal1 304 107 422 111 0 GND!
-rlabel metal1 304 4 422 8 0 Vdd!
 rlabel metal2 266 84 274 96 0 ADDSUB
 rlabel metal2 114 9 238 19 0 MUXOUT
 rlabel metal2 19 0 29 55 0 REGIN
 rlabel metal2 153 84 161 96 0 DIVIN
+rlabel metal1 0 107 422 115 0 GND
+rlabel nwell 0 0 422 8 0 Vdd
 << end >>
